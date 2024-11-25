@@ -1,0 +1,8 @@
+duino_vscode_settings
+coverage
+gitpython
+pytest
+pylint
+pyyaml
+wget
+yapf
