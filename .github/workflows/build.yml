@@ -1,0 +1,30 @@
+name: Build Actions for duino_cli
+
+on: [push, pull_request]
+
+# DuinoLed has no source files that are unottest-able
+#
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./duino
+    steps:
+
+    - name: Checkout duino
+      uses: actions/checkout@v4
+      with:
+        path: duino
+
+    - name: Checkout duino_makefile
+      uses: actions/checkout@v4
+      with:
+        repository: dhylands/duino_makefile
+        path: libraries/duino_makefile
+
+    - name: Install python tools
+      run: make install-python-tools
+
+    - name: Run python tools
+      run: make run-python-tools
