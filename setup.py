@@ -52,7 +52,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'install-duino-from-zip=duino.duino_install_from_zip:main'
+            'install-duino-from-zip=duino.duino_install_from_zip:main',
             'install-duino-from-git=duino.duino_install_from_git:main'
         ],
     },
